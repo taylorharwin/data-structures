@@ -62,13 +62,12 @@ Graph.prototype.addEdge = function(fromNode, toNode){
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
-  var i;
-  var j;
+  
   var edges = this._edges;
   var fromNodeExist = false;
   var toNodeExist = false;
   if (toNode === undefined) {
-    for (i = edges.length-1; 0 <= i; i--) {
+    for (var i = edges.length-1; 0 <= i; i--) {
       if (edges[i][0] === fromNode || edges[i][1] === fromNode) {
         edges.splice(i, 1);
       }
@@ -80,7 +79,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
       }
     }
   }
-  for (j = 0; j < edges.length; j++) {
+  for (var j = 0; j < edges.length; j++) {
     if (edges[j].indexOf(fromNode) !== -1) {
       fromNodeExist = true;
     }
